@@ -1,6 +1,4 @@
-<?php
-
-include_once('init.php');
+<?php include_once('init.php');
 
 
 if( ! isset($_GET['id']) ){
@@ -10,4 +8,3 @@ if( ! isset($_GET['id']) ){
 delete('categories', $_GET['id']);
 header('Location: category_list.php');
 die();
-

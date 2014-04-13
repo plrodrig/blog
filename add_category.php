@@ -1,5 +1,4 @@
 <?php
-
 include_once('init.php');
 if(isset($_POST['name'])){
 	$name = trim($_POST['name']);
