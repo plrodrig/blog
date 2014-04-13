@@ -21,6 +21,10 @@
 		if( empty($errors) ){
 			add_post($title, $contents, $_POST['category']);
 		}
+		$id = mysql_insert_id();
+
+		header('location: index.php?id={$id}' . $id);
+		die();
 	
 	}
 
