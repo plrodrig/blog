@@ -29,7 +29,10 @@ $posts = get_posts();
 		}
 		?>
 		<h2><a href="index.php?id=<?php echo $post['post_id']; ?> "><?php echo $post['title']; ?></a></h2>
-
+		<p>Posted on <?php echo date('d-m-Y h:i:s', strtotime($post['data_posted'])); ?> 
+			in <a href="category.php?id=<?php echo $post['category_id']; ?>"><?php echo $post['name'];?></a>
+		</p>
+		<div><?php echo nl2br($post['contents']); ?></div>
 		<?php
 	}
 	?>
