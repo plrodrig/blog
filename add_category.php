@@ -29,7 +29,7 @@ if(isset($_POST['name'])){
 
 		<?php
 		if(isset($error)){
-			echo "<p>{$error}}</p>\n";
+			echo "<p>{$error}</p>\n";
 		}
 		?>
 		<form action="" method="POST">

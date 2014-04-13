@@ -14,7 +14,11 @@ function add_category($name){
 
 }
 
-function delete($field, $id){
+function delete($table, $id){
+	$table = mysql_real_escape_string($table);
+	$id = (int) $id;
+
+	mysql_query("DELETE FROM `{$table}` WHERE `id` = {$id}");
 	
 }
 
@@ -23,6 +27,14 @@ function get_posts($id = null, $cat_id = null){
 }
 
 function get_categories($id = null){
+	$categories = array();
+
+	$query = mysql_query("SELECT id, name FROM categories");
+
+	while($row = mysql_fetch_array($query)){
+		$categories[] = $row;
+	}
+	return $categories;
 
 }
 
