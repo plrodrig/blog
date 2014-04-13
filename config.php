@@ -7,9 +7,10 @@ $config['db_name'] = 'blog';
 
 
 foreach($config as $k => $v){
-	define(strtoupper($k), $v)
+	define(strtoupper($k), $v);
 }
 
+?>
 
 
 

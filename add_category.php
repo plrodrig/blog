@@ -26,6 +26,12 @@ if(isset($_POST['name'])){
 </head>
 <body>
 		<h1>Add a category</h1>
+
+		<?php
+		if(isset($error)){
+			echo "<p>{$error}}</p>\n";
+		}
+		?>
 		<form action="" method="POST">
 			<div>
 				<label for="name"> Name </label>
