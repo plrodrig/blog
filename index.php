@@ -1,5 +1,7 @@
 <?php include_once('init.php');
-$posts = get_posts();
+
+$posts = (isset($_GET['id']) ) ? get_posts($_GET['id']) : get_posts();
+#$posts = get_posts(((isset($_GET['id'])) ? $_GET['id'] : null));
 ?>
 <!DOCTYPE html>
 <html lang="en">
