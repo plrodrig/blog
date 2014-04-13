@@ -38,11 +38,12 @@ function get_categories($id = null){
 
 }
 
-function category_exists($name){
-	$name = mysql_real_escape_string($name);
-	$query = mysql_query("SELECT COUNT(1) FROM categories WHERE name = '{$name}'");
+function category_exists($field, $value){
+	$field = mysql_real_escape_string($field);
+	$value = mysql_real_escape_string($value);
 
-	echo mysql_error();
+	$query = mysql_query("SELECT COUNT(1) FROM categories WHERE {$field} = '{$value}'");
+
 	return(mysql_result($query,0) == '0')?false : true;
 }
 ?>
