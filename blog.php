@@ -42,6 +42,11 @@ function get_posts($id = null, $cat_id = null){
 		$query .= " WHERE `posts` . `id` = {$id}";
 	}
 
+	if( isset($cat_id) ){
+		$cat_id = (int) $cat_id;
+		$query .= " WHERE `cat_id` = {$cat_id}";
+	}
+
 
 	$query .= " ORDER BY `posts` . `id` DESC";
 	$query = mysql_query($query);

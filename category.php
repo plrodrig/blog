@@ -1,7 +1,6 @@
-<?php include_once('init.php');
-
-#$posts = (isset($_GET['id']) ) ? get_posts($_GET['id']) : get_posts();
- $posts = get_posts(((isset($_GET['id'])) ? $_GET['id'] : null));
+<?php
+include_once('init.php');
+$posts = get_posts(null, $_GET['id']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,6 +24,7 @@
 	</nav>
 	<h1>Priscilla's Blog</h1>
 	<?php
+
 	foreach ($posts as $post ) {
 		
 		?>
@@ -42,7 +42,8 @@
 		</menu>
 		<?php
 	}
-	?>
+	
 
+	?>
 </body>
 </html>
